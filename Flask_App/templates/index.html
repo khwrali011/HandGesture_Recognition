@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+</head>
+<body>
+    <h1>Upload an Image for Hand Gesture Recognition</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% if request.method == 'POST' %}
+        <h2>Result:</h2>
+        <img src="{{ url_for('static', filename='result.png') }}" alt="Result Image">
+    {% endif %}
+</body>
+</html>
